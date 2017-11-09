@@ -3,32 +3,35 @@ using System.IO;
 using System.Text;
 
 namespace ProjetoEvento.ClassePai.ClassesFilhas {
-    public class Show : Evento // class SHOW, com heranças da class EVENTO
-    {
-        public string Atracao { get; set; }
-        public string GeneroMusical { get; set; }
-
-        public Show () {
+    public class Cinema : Evento {
+        public string Diretor { get; set; }
+        public string[] Elenco { get; set; }
+        public Cinema () {
 
         }
-        public Show (string Titulo, string Local, int Lotacao, string Duracao, int Classificacao, DateTime Data, string Atracao, string GeneroMusical) {
+        public Cinema (string Titulo, string Local, int Lotacao, string Duracao, int Classificacao, DateTime Data, string Diretor, string[] Elenco) {
             base.Titulo = Titulo; // base é usado quando o objeto/atributo pertence a CLASSE PAI
             base.Local = Local;
             base.Lotacao = Lotacao;
             base.Duracao = Duracao;
             base.Classificacao = Classificacao;
             base.Data = Data;
-            this.Atracao = Atracao;
-            this.GeneroMusical = GeneroMusical; // this serve apenas para a mesma classe que esta sendo usado
+            this.Diretor = Diretor;
+            this.Elenco = Elenco; // this serve apenas para a mesma classe que esta sendo usado
         }
         public override bool Cadastrar () {
             bool Efetuado = false;
             StreamWriter arquivo = null;
+            string Artistas = "";
 
             try // tenta o metodo abaixo até dar certo
             {
-                arquivo = new StreamWriter ("show.csv", true);
-                arquivo.WriteLine (Titulo + ";" + Local + ";" + Data + ";" + Lotacao + ";" + Duracao + ";" + Classificacao + ";" + Atracao + ";" + GeneroMusical);
+                arquivo = new StreamWriter ("cinema.csv", true);
+
+                for (int i = 0; i < Elenco.Length; i++) {
+                    Artistas += Elenco[i] + "/";
+                }
+                arquivo.WriteLine (Titulo + "-" + Local + "-" + Data + "-" + Lotacao + "-" + Duracao + "-" + Classificacao + "-" + Diretor + "-" + Artistas);
                 Efetuado = true;
             } catch (Exception ex) // o que será exibido caso der algum erro com o TRY 
             {
@@ -37,20 +40,20 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
             {
                 arquivo.Close ();
             }
-
             return Efetuado;
+
         }
         public override string Pesquisar (string TituloEvento) {
             string Resultado = "Evento não encontrado";
             StreamReader ler = null;
 
             try {
-                ler = new StreamReader ("show.csv", Encoding.Default); // ENCODING serve para dizer os tipos de caracteres que vão ser pesquisados
+                ler = new StreamReader ("cinema.csv", Encoding.Default); // ENCODING serve para dizer os tipos de caracteres que vão ser pesquisados
                 string Linha = "";
 
                 while ((Linha = ler.ReadLine ()) != null) // enquanto tiver dado escrito ele continua no while
                 {
-                    string[] dados = Linha.Split (';'); // indica que cada dado pesquisado é separado por ";" e a cada ';' ele inclui o dado em um ARRAY
+                    string[] dados = Linha.Split ('-'); // indica que cada dado pesquisado é separado por ";" e a cada ';' ele inclui o dado em um ARRAY
                     if (dados[0] == Titulo) // se ele encontrar o que foi epsquisado na coluna do titulo, ele lê toda a linha
                     {
                         Resultado = Linha;
@@ -71,12 +74,12 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
             StreamReader ler = null;
 
             try {
-                ler = new StreamReader ("show.csv", Encoding.Default); // ENCODING serve para dizer os tipos de caracteres que vão ser pesquisados
+                ler = new StreamReader ("cinema.csv", Encoding.Default); // ENCODING serve para dizer os tipos de caracteres que vão ser pesquisados
                 string Linha = "";
 
                 while ((Linha = ler.ReadLine ()) != null) // enquanto tiver dado escrito ele continua no while
                 {
-                    string[] dados = Linha.Split (';'); // indica que cada dado pesquisado é separado por ";" e a cada ';' ele inclui o dado em um ARRAY
+                    string[] dados = Linha.Split ('-'); // indica que cada dado pesquisado é separado por ";" e a cada ';' ele inclui o dado em um ARRAY
                     if (dados[2] == Data.ToString ()) // se ele encontrar o que foi epsquisado na coluna do titulo, ele lê toda a linha
                     {
                         Resultado = Linha;
