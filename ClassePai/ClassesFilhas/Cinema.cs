@@ -91,7 +91,6 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
             } finally {
                 ler.Close ();
             }
-
             return Resultado;
         }
     }
