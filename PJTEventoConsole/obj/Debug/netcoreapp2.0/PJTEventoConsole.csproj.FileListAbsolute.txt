@@ -1,0 +1,12 @@
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\PJTEventoConsole.deps.json
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\PJTEventoConsole.runtimeconfig.json
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\PJTEventoConsole.runtimeconfig.dev.json
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\PJTEventoConsole.dll
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\PJTEventoConsole.pdb
+c:\Users\43692939876\backend\PJTEventoConsole\obj\Debug\netcoreapp2.0\PJTEventoConsole.csproj.CoreCompileInputs.cache
+c:\Users\43692939876\backend\PJTEventoConsole\obj\Debug\netcoreapp2.0\PJTEventoConsole.AssemblyInfoInputs.cache
+c:\Users\43692939876\backend\PJTEventoConsole\obj\Debug\netcoreapp2.0\PJTEventoConsole.AssemblyInfo.cs
+c:\Users\43692939876\backend\PJTEventoConsole\obj\Debug\netcoreapp2.0\PJTEventoConsole.dll
+c:\Users\43692939876\backend\PJTEventoConsole\obj\Debug\netcoreapp2.0\PJTEventoConsole.pdb
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\ProjetoEvento.dll
+c:\Users\43692939876\backend\PJTEventoConsole\bin\Debug\netcoreapp2.0\ProjetoEvento.pdb
