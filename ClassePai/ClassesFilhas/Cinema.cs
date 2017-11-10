@@ -4,34 +4,34 @@ using System.Text;
 
 namespace ProjetoEvento.ClassePai.ClassesFilhas {
     public class Cinema : Evento {
-        public string Diretor { get; set; }
-        public string[] Elenco { get; set; }
+        public string Genero { get; set; }
+        public DateTime[] Sessao { get; set; }
         public Cinema () {
 
         }
-        public Cinema (string Titulo, string Local, int Lotacao, string Duracao, int Classificacao, DateTime Data, string Diretor, string[] Elenco) {
+        public Cinema (string Titulo, string Local, int Lotacao, string Duracao, int Classificacao, DateTime Data, string Genero, DateTime[] Sessao) {
             base.Titulo = Titulo; // base é usado quando o objeto/atributo pertence a CLASSE PAI
             base.Local = Local;
             base.Lotacao = Lotacao;
             base.Duracao = Duracao;
             base.Classificacao = Classificacao;
             base.Data = Data;
-            this.Diretor = Diretor;
-            this.Elenco = Elenco; // this serve apenas para a mesma classe que esta sendo usado
+            this.Genero = Genero;
+            this.Sessao = Sessao; // this serve apenas para a mesma classe que esta sendo usado
         }
         public override bool Cadastrar () {
             bool Efetuado = false;
             StreamWriter arquivo = null;
-            string Artistas = "";
+            string Horarios = "";
 
             try // tenta o metodo abaixo até dar certo
             {
                 arquivo = new StreamWriter ("cinema.csv", true);
 
-                for (int i = 0; i < Elenco.Length; i++) {
-                    Artistas += Elenco[i] + "/";
+                for (int i = 0; i < Sessao.Length; i++) {
+                    Horarios += Sessao[i] + "/";
                 }
-                arquivo.WriteLine (Titulo + "-" + Local + "-" + Data + "-" + Lotacao + "-" + Duracao + "-" + Classificacao + "-" + Diretor + "-" + Artistas);
+                arquivo.WriteLine (Titulo + "-" + Local + "-" + Data + "-" + Lotacao + "-" + Duracao + "-" + Classificacao + "-" + Genero + "-" + Horarios);
                 Efetuado = true;
             } catch (Exception ex) // o que será exibido caso der algum erro com o TRY 
             {

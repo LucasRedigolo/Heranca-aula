@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\43692939876\\backend\\ProjetoEvento\\ProjetoEvento.csproj",
+      "projectUniqueName": "c:\\Users\\43692939876\\backend\\ProjetoEvento\\ProjetoEvento.csproj",
       "projectName": "ProjetoEvento",
-      "projectPath": "C:\\Users\\43692939876\\backend\\ProjetoEvento\\ProjetoEvento.csproj",
+      "projectPath": "c:\\Users\\43692939876\\backend\\ProjetoEvento\\ProjetoEvento.csproj",
       "packagesPath": "C:\\Users\\43692939876\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\43692939876\\backend\\ProjetoEvento\\obj\\",
+      "outputPath": "c:\\Users\\43692939876\\backend\\ProjetoEvento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

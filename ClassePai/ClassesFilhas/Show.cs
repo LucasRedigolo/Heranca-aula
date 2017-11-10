@@ -28,7 +28,7 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
             try // tenta o metodo abaixo até dar certo
             {
                 arquivo = new StreamWriter ("show.csv", true);
-                arquivo.WriteLine (Titulo + ";" + Local + ";" + Data + ";" + Lotacao + ";" + Duracao + ";" + Classificacao + ";" + Atracao + ";" + GeneroMusical);
+                arquivo.WriteLine (Titulo + "; " + Local + "; " + Data.ToString("dd/MM/yyyy") + "; " + Lotacao + "; " + Duracao + "; " + Classificacao + "; " + Atracao + "; " + GeneroMusical);
                 Efetuado = true;
             } catch (Exception ex) // o que será exibido caso der algum erro com o TRY 
             {
@@ -40,7 +40,7 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
 
             return Efetuado;
         }
-        public override string Pesquisar (string TituloEvento) {
+        public override string Pesquisar (string Titulo) {
             string Resultado = "Evento não encontrado";
             StreamReader ler = null;
 
@@ -51,7 +51,7 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
                 while ((Linha = ler.ReadLine ()) != null) // enquanto tiver dado escrito ele continua no while
                 {
                     string[] dados = Linha.Split (';'); // indica que cada dado pesquisado é separado por ";" e a cada ';' ele inclui o dado em um ARRAY
-                    if (dados[0] == Titulo) // se ele encontrar o que foi epsquisado na coluna do titulo, ele lê toda a linha
+                    if (dados[0]== Titulo) // se ele encontrar o que foi epsquisado na coluna do titulo, ele lê toda a linha
                     {
                         Resultado = Linha;
                         break;

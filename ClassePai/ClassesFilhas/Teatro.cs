@@ -8,7 +8,6 @@ namespace ProjetoEvento.ClassePai.ClassesFilhas {
         public string[] Elenco { get; set; }
 
         public Teatro () {
-
         }
         public Teatro (string Titulo, string Local, int Lotacao, string Duracao, int Classificacao, DateTime Data, string Diretor, string[] Elenco) {
             base.Titulo = Titulo; // base é usado quando o objeto/atributo pertence a CLASSE PAI
